@@ -1,0 +1,30 @@
+#Python 3.7.4
+#Levi McCann
+#11/23/2019
+#GolF Scores (6-10) readfile
+
+#Here is the second program reading from the golf.txt file then rstrip the scores
+
+def score():
+  golfFile = open("golf.txt", "r")
+
+  playerName = golfFile.readline().rstrip( "\n" )
+
+  while playerName != "":
+    playerScore = golfFile.readline().rstrip( "\n" )
+    total = playerScore
+  #  total1 = player2Score
+    numberofLines = 0
+    numberofLines = numberofLines + 1
+    avg = float(total)  / float(numberofLines)
+
+    print(playerName, "scored", playerScore, "points", avg )
+    print(avg)
+  #  print(player2Name, "scored", player2Score, "points", avg )
+  #  print(avg / numberofLines)
+
+    playerName = golfFile.readline().rstrip( "\n" )
+  #Close the "golf.txt" file
+  golfFile.close()
+
+score()
