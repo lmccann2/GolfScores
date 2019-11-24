@@ -1,0 +1,60 @@
+#Python 3.7.4
+#Levi McCann
+#11/21/2019
+#Golf Scores (PC6-10)
+#Hendrickson
+
+def getplayerName():
+  playerName = input("Please enter Player 1 name: ")
+  #playerName1 = input("Please enter Player 1\'s name: ")
+  player2Name = input("Please enter Player 2 name: ")
+  return playerName
+  return player2Name
+
+#def getplayer2Name():
+#   player2Name = input("Please enter Player 2 name: ")
+ #  return player2Name 
+def getPlayerScore(playerName):
+  playerScore = input("Please enter the score of " + playerName + ": ")
+#  player2Score = input("Please enter the score of " + playerName2 + ": ")
+
+
+  return playerScore
+
+def getPlayer2Score(playerName2):
+  playerScore2 = input("Please enter the score of " + playerName2 + ": ")
+
+  return player2Score
+
+#def avg(avg)
+#   ---Uncomment this out if you want a function for average score---
+#   total = getPlayerScore()
+#   numefofLines = numberofLines + 1
+#   avg = total / numberofLines
+def main():
+  golfFile =open("golf.txt", "w")
+
+
+  playerName = getplayerName()
+  playerScore = getPlayerScore(playerName)
+  total = playerScore + playerScore
+  
+  numberofLines = 1
+
+  moreEntry = "y"
+
+  while moreEntry == "y" or moreEntry == "Y":
+    playerName = getplayerName()
+    playerScore = getPlayerScore(playerName)
+    moreEntry = input("Do you want to add another record? Type" +\
+  " y for yes or any other character for no. ")
+    numberofLines = numberofLines + 1
+    average = float(total) / float(numberofLines)
+    #write to the golf.txt file
+  golfFile.write( playerName +"\n" + playerScore + "\n" )
+
+  #close the "golf.txt file"
+  golfFile.close()
+print("All details have been printed to golfFile.txt")
+
+main()
